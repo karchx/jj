@@ -1,6 +1,6 @@
 package lexer
 
-import "github.com/karchx/kb/token"
+import "github.com/karchx/jj/token"
 
 type Lexer struct {
 	input        string

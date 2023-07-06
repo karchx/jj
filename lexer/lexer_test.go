@@ -4,7 +4,7 @@ package lexer
 import (
 	"testing"
 
-	"github.com/karchx/kb/token"
+	"github.com/karchx/jj/token"
 )
 
 func TestNextToken(t *testing.T) {
