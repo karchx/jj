@@ -44,11 +44,15 @@ func TestNextToken2(t *testing.T) {
 	input := `let five = 5;
 		let ten = 10;
 
-		let add! = fn(x, y) {
+		let add = fn(x, y) {
 			x + y;
 		};
 
-		let result = add!(five, ten);
+		let result = add(five, ten);
+
+		let isFive? = fn() {
+			true;
+		};
 	`
 
 	tests := []struct {
@@ -66,7 +70,7 @@ func TestNextToken2(t *testing.T) {
 		{token.INT, "10"},
 		{token.SEMICOLON, ";"},
 		{token.LET, "let"},
-		{token.IDENT, "add!"},
+		{token.IDENT, "add"},
 		{token.ASSING, "="},
 		{token.FUNCTION, "fn"},
 		{token.LPAREN, "("},
@@ -84,12 +88,23 @@ func TestNextToken2(t *testing.T) {
 		{token.LET, "let"},
 		{token.IDENT, "result"},
 		{token.ASSING, "="},
-		{token.IDENT, "add!"},
+		{token.IDENT, "add"},
 		{token.LPAREN, "("},
 		{token.IDENT, "five"},
 		{token.COMMA, ","},
 		{token.IDENT, "ten"},
 		{token.RPAREN, ")"},
+		{token.SEMICOLON, ";"},
+		{token.LET, "let"},
+		{token.IDENT, "isFive?"},
+		{token.ASSING, "="},
+		{token.FUNCTION, "fn"},
+		{token.LPAREN, "("},
+		{token.RPAREN, ")"},
+		{token.LBRACE, "{"},
+		{token.IDENT, "true"}, // change for type bool
+		{token.SEMICOLON, ";"},
+		{token.RBRACE, "}"},
 		{token.SEMICOLON, ";"},
 		{token.EOF, ""},
 	}
