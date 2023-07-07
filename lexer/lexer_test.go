@@ -1,4 +1,4 @@
-// https://github.com/LixvYang/Writing-a-Interpreter-in-Go-Translation/blob/main/contents/1/1.3.md
+// https://github.com/LixvYang/Writing-a-Interpreter-in-Go-Translation/blob/main/contents/1/1.4.md
 package lexer
 
 import (
@@ -44,11 +44,11 @@ func TestNextToken2(t *testing.T) {
 	input := `let five = 5;
 		let ten = 10;
 
-		let add = fn(x, y) {
+		let add! = fn(x, y) {
 			x + y;
 		};
 
-		let result = add(five, ten);
+		let result = add!(five, ten);
 	`
 
 	tests := []struct {
@@ -66,7 +66,7 @@ func TestNextToken2(t *testing.T) {
 		{token.INT, "10"},
 		{token.SEMICOLON, ";"},
 		{token.LET, "let"},
-		{token.IDENT, "add"},
+		{token.IDENT, "add!"},
 		{token.ASSING, "="},
 		{token.FUNCTION, "fn"},
 		{token.LPAREN, "("},
@@ -84,7 +84,7 @@ func TestNextToken2(t *testing.T) {
 		{token.LET, "let"},
 		{token.IDENT, "result"},
 		{token.ASSING, "="},
-		{token.IDENT, "add"},
+		{token.IDENT, "add!"},
 		{token.LPAREN, "("},
 		{token.IDENT, "five"},
 		{token.COMMA, ","},
