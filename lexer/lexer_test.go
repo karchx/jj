@@ -1,4 +1,3 @@
-// https://github.com/LixvYang/Writing-a-Interpreter-in-Go-Translation/blob/main/contents/1/1.4.md
 package lexer
 
 import (
