@@ -1,4 +1,3 @@
-// https://github.com/LixvYang/Writing-a-Interpreter-in-Go-Translation/blob/main/contents/2/2.4.md
 package parser
 
 import (
