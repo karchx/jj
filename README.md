@@ -1,1 +1,2 @@
 # JJ
+Interpret in golang
